@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.owasp.pages.HomePage.addAddress()&apos; to &apos;goToAddAddress&apos;&#x0D;&#x0A;- Original project: &apos;OWASP&apos;&#x0D;&#x0A;- Original element: &apos;com.owasp.pages.HomePage.addAddress()&apos;&#x0D;&#x0A;- Renamed element: &apos;com.owasp.pages.HomePage.goToAddAddress()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;addAddress&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.owasp.pages{HomePage.java[HomePage~addAddress" name="goToAddAddress" references="true" stamp="1706911989150" version="1.0"/>
+</session>

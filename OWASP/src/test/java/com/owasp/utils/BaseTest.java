@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import com.owasp.pages.AddressPage;
 import com.owasp.pages.HomePage;
 import com.owasp.pages.LoginPage;
 import com.owasp.pages.RegisterPage;
@@ -17,6 +18,7 @@ public class BaseTest {
 	protected HomePage homePage;
 	protected RegisterPage registerPage;
 	protected LoginPage loginPage;
+	protected AddressPage addressPage;
 	
 	@BeforeMethod
 	public void setup() {
@@ -29,6 +31,7 @@ public class BaseTest {
 		homePage = new HomePage(driver);
 		registerPage = new RegisterPage(driver);
 		loginPage = new LoginPage(driver);
+		addressPage = new AddressPage(driver);
 	}
 
 	@AfterMethod

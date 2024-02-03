@@ -2,6 +2,7 @@ package com.owasp.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.owasp.utils.BasePage;
 import com.owasp.utils.Variables;
@@ -15,6 +16,8 @@ public class HomePage extends BasePage{
 	By login = By.id("navbarLoginButton");
 	By newCustomer = By.linkText("Not yet a customer?");
 	By loginLink = By.linkText("Log in");
+	By ordersNPay = By.xpath("/html/body/div[3]/div[2]/div/div/div/button[2]");
+	By address = By.xpath("/html/body/div[3]/div[3]/div/div/div/button[3]");
 	
 	By dis = By.xpath("/html/body/div[3]/div[2]/div/mat-dialog-container/app-welcome-banner/div/div[2]/button[2]");
 	By meWant = By.linkText("Me want it!");
@@ -31,6 +34,7 @@ public class HomePage extends BasePage{
 	}
 	
 	public void dismissButtons() {
+		wait.until(ExpectedConditions.presenceOfElementLocated(dis));
 		click(dis);
 		click(meWant);
 	}
@@ -45,5 +49,12 @@ public class HomePage extends BasePage{
 	public void goToLogin() {
 		click(account);
 		click(login);
+	}
+	
+	public void goToAddAddress() {
+		click(account);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ordersNPay));
+		click(ordersNPay);
+		click(address);
 	}
 }

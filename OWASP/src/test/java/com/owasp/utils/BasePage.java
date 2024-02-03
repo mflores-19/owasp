@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	WebDriver driver;
-	WebDriverWait wait;
+	protected WebDriverWait wait;
 	//WebElement selectElement;
 	int timeOutSec = 10;
 

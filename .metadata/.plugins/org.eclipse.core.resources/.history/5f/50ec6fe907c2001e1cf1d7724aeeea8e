@@ -1,0 +1,30 @@
+package com.owasp.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.owasp.utils.BasePage;
+
+public class AddressPage extends BasePage{
+	
+	public AddressPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
+	public WebDriver driver;
+	
+	By addAddr = By.linkText("Add New Address");
+	By country = By.id("mat-input-13");
+	By uName = By.id("mat-input-14");
+	By mobile = By.id("mat-input-15");
+	By zipCode = By.id("mat-input-16");
+	By address = By.id("address");
+	By city = By.id("mat-input-18");
+	By state = By.id("mat-input-19");
+	By submit = By.id("submitButton");
+	
+	public void addNewAddress(String xaddress, String) {
+		
+	}
+}
