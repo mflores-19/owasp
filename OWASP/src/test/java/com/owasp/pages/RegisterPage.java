@@ -37,16 +37,6 @@ public class RegisterPage extends BasePage {
 		click(registerBtn);
 	}
 	
-	public void registerUserDataProvided(String xemail, String xpass, String xrepPass, String xans) {
-		type(email, xemail);
-		type(pass, xpass);
-		type(repPass, xrepPass);
-		click(secQuestion);
-		click(ansSec);
-		type(ans, xans);
-		click(registerBtn);
-	}
-	
 	public boolean completeRegistration() {
 		if(isDisplayed(succMsg)) {
 			return true;

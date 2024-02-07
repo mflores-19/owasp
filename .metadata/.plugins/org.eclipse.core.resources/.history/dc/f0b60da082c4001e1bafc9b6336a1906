@@ -1,0 +1,37 @@
+package com.owasp.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.owasp.utils.BasePage;
+
+public class PaymentPage extends BasePage{
+	public WebDriver driver;
+	
+	By addPay = By.id("mat-expansion-panel-header-0");
+	By name = By.xpath("//*[@id=\"mat-input-11\"]");
+	By cardNumber = By.xpath("//*[@id=\"mat-input-8\"]");
+	By expiryMonth = By.id("//*[@id=\"mat-input-13\"]");
+	By selExpMonth = By.xpath("//*[@id=\"mat-input-13\"]/option[2]");
+	//*[@id="mat-input-13"]/option[3]
+	By expiryYear = By.id("//*[@id=\"mat-input-14\"]");
+	By selExpYear = By.xpath("//*[@id=\"mat-input-14\"]/option[3]");
+	//*[@id="mat-input-14"]/option[3]
+	By submitBtn = By.id("submitButton");
+
+	public PaymentPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void addPayment(String xname, String xcardNumber) {
+		click(addPay);
+		type(name, xname);
+		type(cardNumber, xcardNumber);
+		//type(expiryMonth, xexpiryYear);
+		//click(expiryMonth);
+		//click(selExpMonth);
+		//click(expiryYear);
+		//click(selExpYear);
+	}
+}

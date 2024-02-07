@@ -1,0 +1,17 @@
+package com.owasp.tests;
+
+import java.util.Locale;
+
+import org.testng.annotations.Test;
+
+import com.github.javafaker.Faker;
+import com.owasp.utils.BaseTest;
+
+public class PaymentTest extends BaseTest{
+	Faker faker = new Faker(new Locale("en-US"));
+	
+	@Test
+	public void addPaymentTest() {
+		
+	}
+}

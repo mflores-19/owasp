@@ -1,0 +1,45 @@
+package com.owasp.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.owasp.utils.BasePage;
+
+public class OrderPage extends BasePage{
+	public WebDriver driver;
+	
+	By itemOne = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[2]/mat-grid-list/div/mat-grid-tile[2]/div/mat-card/div[2]/button");
+	By nextPage = By.className("mat-paginator-icon");
+	By itemTwo = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[2]/mat-grid-list/div/mat-grid-tile[1]/div/mat-card/div[2]/button");
+	By basket = By.linkText("Your Basket");
+	By checkoutBtn = By.id("checkoutButton");
+	By selAddress = By.className("mat-radio-input");
+	By continueBtn = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-address-select/div/app-address/mat-card/button");
+	By delSpeed = By.id("mat-radio-45-input");
+	By conBtn = By.className("mat-button-wrapper");
+	By payOpt = By.className("mat-radio-button mat-accent");
+	
+	By succMsg = By.linkText("Thank you for your purchase!");
+	
+	public OrderPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+ 
+	public void createOrder() {
+		click(itemOne);
+		click(nextPage);
+		wait.until(ExpectedConditions.presenceOfElementLocated(itemTwo));
+		click(itemTwo);
+		click(basket);
+		click(checkoutBtn);
+		click(selAddress);
+		click(continueBtn);
+		click(delSpeed);
+		click(conBtn);
+		click(payOpt);
+		click(conBtn);
+		click(conBtn);
+	}
+}

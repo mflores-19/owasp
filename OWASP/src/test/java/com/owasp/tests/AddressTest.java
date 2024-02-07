@@ -17,18 +17,22 @@ public class AddressTest extends BaseTest{
 	public void addAddressTest() {
 		String fcountry = faker.country().name();
 		String name = faker.name().firstName();
+		String mobile = faker.phoneNumber().cellPhone();
 		String state = faker.address().state();
-		//String zip = faker.address().zipCodeByState(state);
+		String zip = faker.address().zipCode();
 		String address = faker.address().fullAddress();
 		String city = faker.address().city();
 		
+		mobile = mobile.replaceAll(".", "");
+		zip = zip.replaceAll("-", "");
+		
 		
 		homePage.goToRegister();
-		registerPage.registerUserDataProvided("maila@mail.com", "pass123", "pass123", "sensa");
+		registerPage.registerUser("maila@mail.com", "pass123", "pass123", "sensa");
 		homePage.goToLogin();
 		loginPage.login("maila@mail.com", "pass123");
 		homePage.goToAddAddress();
-		addressPage.addNewAddress(fcountry, name, "1234567890", "34567", address, city, state);
+		addressPage.addNewAddress(fcountry, name, "7896541236", "85412", address, city, state);
 		
 		assertEquals(addressPage.completeRegistration(), true);
 	}

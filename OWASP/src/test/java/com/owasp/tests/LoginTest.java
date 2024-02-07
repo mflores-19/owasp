@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
 	@Test(dataProvider = "dataLogin")
 	public void loginTest(String email, String pass, String ans) {
 		homePage.goToRegister();
-		registerPage.registerUserDataProvided(email, pass, pass, ans);
+		registerPage.registerUser(email, pass, pass, ans);
 		homePage.goToLogin();
 		loginPage.login(email, pass);
 

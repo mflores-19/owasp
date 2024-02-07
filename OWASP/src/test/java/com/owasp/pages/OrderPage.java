@@ -1,0 +1,39 @@
+package com.owasp.pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.owasp.utils.BasePage;
+
+public class OrderPage extends BasePage{
+	public WebDriver driver;
+	
+	By itemOne = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[2]/mat-grid-list/div/mat-grid-tile[2]/div/mat-card/div[2]/button");
+	By nextPage = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/mat-paginator/div/div/div[2]/button[2]");
+	                       //html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/mat-paginator/div/div/div[2]/button[2]
+	By itemTwo = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[2]/mat-grid-list/div/mat-grid-tile[1]/div/mat-card/div[2]/button");
+	By basket = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[4]");
+	By checkoutBtn = By.id("checkoutButton");
+	By selAddress = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-address-select/div/app-address/mat-card/mat-table/mat-row[1]/mat-cell[1]/mat-radio-button");
+	By continueBtn = By.xpath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-address-select/div/app-address/mat-card/button");
+	By delSpeed = By.id("mat-radio-45-input");
+	By conBtn = By.className("mat-button-wrapper");
+	By payOpt = By.id("mat-radio-52-input");
+	
+	By succMsg = By.linkText("Thank you for your purchase!");
+	
+	public OrderPage(WebDriver driver) {
+		super(driver);
+		this.driver = driver;
+		// TODO Auto-generated constructor stub
+	}
+ 
+	public void createOrder() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		click(itemOne);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	}
+}

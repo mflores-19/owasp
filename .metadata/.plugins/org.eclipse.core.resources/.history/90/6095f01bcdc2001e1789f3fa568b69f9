@@ -1,0 +1,25 @@
+package com.owasp.tests;
+
+import java.util.Locale;
+
+import org.testng.annotations.Test;
+
+import com.github.javafaker.Faker;
+import com.owasp.utils.BaseTest;
+
+public class PaymentTest extends BaseTest{
+	Faker faker = new Faker(new Locale("en-US"));
+	
+	@Test
+	public void addPaymentTest() {
+		String fname = faker.name().fullName();
+		String fcard = faker.finance().creditCard();
+		
+		homePage.goToRegister();
+		registerPage.registerUserDataProvided("maila@mail.com", "pass123", "pass123", "sensa");
+		homePage.goToLogin();
+		loginPage.login("maila@mail.com", "pass123");
+		homePage.goToPayment();
+		paymentPage.addPayment(null, null);
+	}
+}

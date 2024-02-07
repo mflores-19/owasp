@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import com.owasp.pages.AddressPage;
 import com.owasp.pages.HomePage;
 import com.owasp.pages.LoginPage;
+import com.owasp.pages.OrderPage;
+import com.owasp.pages.PaymentPage;
 import com.owasp.pages.RegisterPage;
 
 public class BaseTest {
@@ -19,6 +21,8 @@ public class BaseTest {
 	protected RegisterPage registerPage;
 	protected LoginPage loginPage;
 	protected AddressPage addressPage;
+	protected PaymentPage paymentPage;
+	protected OrderPage orderPage;
 	
 	@BeforeMethod
 	public void setup() {
@@ -32,6 +36,8 @@ public class BaseTest {
 		registerPage = new RegisterPage(driver);
 		loginPage = new LoginPage(driver);
 		addressPage = new AddressPage(driver);
+		paymentPage = new PaymentPage(driver);
+		orderPage = new OrderPage(driver);
 	}
 
 	@AfterMethod

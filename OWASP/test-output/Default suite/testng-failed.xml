@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.owasp.tests.AddressTest">
+      <class name="com.owasp.tests.OrderTest">
         <methods>
+          <include name="createOrderTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="addAddressTest"/>
         </methods>
-      </class> <!-- com.owasp.tests.AddressTest -->
+      </class> <!-- com.owasp.tests.OrderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

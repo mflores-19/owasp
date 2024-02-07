@@ -1,0 +1,20 @@
+package com.owasp.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.owasp.utils.BasePage;
+
+public class PaymentPage extends BasePage{
+	public WebDriver driver;
+	
+	By addPay = By.id("mat-expansion-panel-header-0");
+	By name = By.id("mat-form-field-label-19");
+	By cardNumber = By.xpath("//*[@id=\"mat-input-8\"]");
+
+	public PaymentPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
+}
